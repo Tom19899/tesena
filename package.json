@@ -1,0 +1,23 @@
+{
+  "name": "tesena",
+  "version": "1.0.0",
+  "description": "technicky_pohovor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tom19899/tesena.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tom19899/tesena/issues"
+  },
+  "homepage": "https://github.com/Tom19899/tesena#readme",
+  "dependencies": {
+    "cypress": "^12.13.0"
+  }
+}
