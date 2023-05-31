@@ -1,0 +1,2 @@
+# tesena
+technicky_pohovor
