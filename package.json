@@ -18,11 +18,11 @@
   },
   "homepage": "https://github.com/Tom19899/tesena#readme",
   "dependencies": {
-    "@cypress/grep": "^3.1.5",
-    "cypress": "^12.13.0"
+    "@cypress/grep": "^3.1.5"
   },
   "devDependencies": {
-    "@faker-js/faker": "^6.6.6",
-    "@cypress/xpath": "^2.0.3"
+    "@faker-js/faker": "^6.0.0",
+    "cypress": "^12.13.0",
+    "mocha": "^10.2.0"
   }
 }

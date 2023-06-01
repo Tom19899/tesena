@@ -9,7 +9,6 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       require("@cypress/grep/src/plugin")(config);
       return config;
-      // implement node event listeners here
     },
     watchForFileChanges: false,
   },

@@ -1,6 +1,7 @@
 import { HomePage } from "../page-objects/home_page";
 import { faker } from "@faker-js/faker";
 import { SluzbyPage } from "../page-objects/sluzby_page";
+import { Context } from "mocha";
 
 describe("Open website Tesena", () => {
   let username;
