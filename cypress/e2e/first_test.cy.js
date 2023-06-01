@@ -1,36 +1,44 @@
 import { HomePage } from "../page-objects/home_page";
-import { faker } from "@faker-js/faker";
 import { SluzbyPage } from "../page-objects/sluzby_page";
-import { Context } from "mocha";
 
 describe("Open website Tesena", () => {
-  let username;
   const phone = "+420771177222";
+  // const faker = require("faker");
 
   beforeEach(() => {
     new HomePage().openTesena().confirmCookies();
+    cy.viewport(1366, 768);
   });
 
-  it("Click 2 menu section", () => {
-    new HomePage().clickSluzby().waitTime().clickSkoleni().waitTime();
+  context("Click menu section", () => {
+    it("Click all menu section", () => {
+      new HomePage()
+        .clickSluzby()
+        .clickSkoleni()
+        .clickUdalosti()
+        .clickPostrehy()
+        .clickKariera()
+        .clickTesenaFest();
+    });
   });
 
-  it("Fill form", () => {
-    username = faker.person.firstName();
-    new HomePage()
-      .fillFieldNameAndCheckValue(username)
-      .fillAccidentalUserEmail()
-      .fillPhoneNumber(phone)
-      .fillBoxWithCanWeHelpYou()
-      .clickCheckBoxGDPR();
-  });
+  context("Fill form and check visible elements", () => {
+    it("Fill form", () => {
+      new HomePage()
+        .fillFieldNameAndCheckValue()
+        .fillAccidentalUserEmail()
+        .fillPhoneNumber(phone)
+        .fillBoxWithCanWeHelpYou()
+        .clickCheckBoxGDPR();
+    });
 
-  it.only("Check visible elements", () => {
-    new HomePage().checkWelcomeText().logoIsVisible();
-    new SluzbyPage()
-      .clickSluzby()
-      .buttonKonzultaceZdarmaIsVissible()
-      .imageCeskaSportelnaIsVisible()
-      .buttonNaseSluzbyIsVisible();
+    it("Check visible elements", () => {
+      new HomePage().checkWelcomeText().logoIsVisible();
+      new SluzbyPage()
+        .clickSluzby()
+        .buttonKonzultaceZdarmaIsVissible()
+        .imageCeskaSportelnaIsVisible()
+        .buttonNaseSluzbyIsVisible();
+    });
   });
 });

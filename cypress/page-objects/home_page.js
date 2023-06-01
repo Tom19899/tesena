@@ -40,9 +40,10 @@ export class HomePage extends MenuSection {
     return this;
   }
 
-  fillFieldNameAndCheckValue(username) {
-    cy.get(this.fieldName).clear().type(username);
-    cy.get(this.fieldName).should("have.value", username);
+  fillFieldNameAndCheckValue() {
+    const generatorFirstName = new AccidentalGenerators().firstNameGenerator();
+    cy.get(this.fieldName).type(generatorFirstName);
+    cy.get(this.fieldName).should("have.value", generatorFirstName);
     return this;
   }
 
