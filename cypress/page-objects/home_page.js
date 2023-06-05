@@ -25,8 +25,8 @@ export class HomePage extends MenuSection {
     return this;
   }
 
-  checkWelcomeText() {
-    cy.get(this.nadpisTesting360).contains("Testing 360°");
+  checkWelcomeText(welcomeText) {
+    cy.get(this.nadpisTesting360).contains(welcomeText);
     return this;
   }
 
@@ -40,15 +40,13 @@ export class HomePage extends MenuSection {
     return this;
   }
 
-  fillFieldNameAndCheckValue() {
-    const generatorFirstName = new AccidentalGenerators().firstNameGenerator();
+  fillFieldNameAndCheckValue(generatorFirstName) {
     cy.get(this.fieldName).type(generatorFirstName);
     cy.get(this.fieldName).should("have.value", generatorFirstName);
     return this;
   }
 
-  fillAccidentalUserEmail() {
-    const generatedEmail = new AccidentalGenerators().emailAdressGenerator();
+  fillAccidentalUserEmail(generatedEmail) {
     cy.get(this.fieldEmail).type(generatedEmail);
     cy.get(this.fieldEmail).should("have.value", generatedEmail);
     return this;
@@ -60,9 +58,9 @@ export class HomePage extends MenuSection {
     return this;
   }
 
-  fillBoxWithCanWeHelpYou() {
-    cy.get(this.fieldCanWeHelpYou).type("Ahoj, jak se máš?");
-    cy.get(this.fieldCanWeHelpYou).should("have.value", "Ahoj, jak se máš?");
+  fillBoxWithCanWeHelpYou(text) {
+    cy.get(this.fieldCanWeHelpYou).type(text);
+    cy.get(this.fieldCanWeHelpYou).should("have.value", text);
     return this;
   }
 
